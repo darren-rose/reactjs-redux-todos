@@ -1,6 +1,8 @@
+import { Actions } from '../actions'
+
 const todosReducer = (state = [], action) => {
   switch (action.type) {
-    case 'ADD_TODO':
+    case Actions.ADD_TODO:
       return [
         ...state,
         {
@@ -9,7 +11,7 @@ const todosReducer = (state = [], action) => {
           completed: false
         }
       ]
-    case 'TOGGLE_TODO':
+    case Actions.TOGGLE_TODO:
       return state.map(todo =>
         (todo.id === action.id)
           ? {...todo, completed: !todo.completed}
